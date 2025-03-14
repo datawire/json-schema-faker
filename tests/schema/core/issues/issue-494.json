@@ -5,29 +5,27 @@
       {
         "description": "should work if enabled",
         "schema": {
-          "account-response": {
-            "title": "Account Response",
-            "type": "object",
-            "properties": {
-              "current": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/current-account"
-                },
-                "minItems": 1
+          "title": "Account Response",
+          "type": "object",
+          "properties": {
+            "current": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/current-account"
               },
-              "escrow": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/current-account"
-                },
-                "minItems": 1
-              }
+              "minItems": 1
             },
-            "required": [
-              "current"
-            ]
+            "escrow": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/current-account"
+              },
+              "minItems": 1
+            }
           },
+          "required": [
+            "current"
+          ],
           "definitions": {
             "current-account": {
               "title": "Current Account",
@@ -59,8 +57,8 @@
           "alwaysFakeOptionals": true
         },
         "notEmpty": [
-          "account-response.current",
-          "account-response.escrow"
+          "current",
+          "escrow"
         ],
         "valid": true
       }

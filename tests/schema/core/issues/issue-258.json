@@ -31,18 +31,20 @@
         "node": {
           "type": "array",
           "items": {
-            "Id": {
-              "type": "integer"
-            },
-            "Label": {
-              "type": "string"
-            },
-            "Children": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/node"
+            "properties": {
+              "Id": {
+                "type": "integer"
               },
-              "minItems": 5
+              "Label": {
+                "type": "string"
+              },
+              "Children": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/node"
+                },
+                "minItems": 5
+              }
             }
           }
         }

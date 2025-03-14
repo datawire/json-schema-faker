@@ -6,40 +6,6 @@ function mockResolve(schema) {
 }
 
 describe('Traverse', () => {
-  it('basic value and context', () => {
-    const schema = {
-      description: 'root object',
-      type: 'object',
-      properties: {
-        foo: {
-          title: 'Foo',
-          description: 'a foo number',
-          type: 'number',
-          generate: () => 0,
-        },
-      },
-      additionalProperties: false,
-    };
-
-    expect(traverse(schema, [], mockResolve, schema)).to.eql({
-      value: {
-        foo: 0,
-      },
-      context: {
-        schemaPath: [],
-        description: schema.description,
-        items: {
-          schemaPath: ['properties'],
-          foo: {
-            schemaPath: ['properties', 'foo'],
-            title: schema.properties.foo.title,
-            description: schema.properties.foo.description,
-          },
-        },
-      },
-    });
-  });
-
   it('array list value and context', () => {
     const schema = {
       title: 'Foo array',

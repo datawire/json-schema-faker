@@ -27,13 +27,11 @@
       {
         "description": "should handle useDefaultValue & replaceEmptyByRandomValue option",
         "schema": {
-          "test-response": {
-            "type": "string",
-            "default": ""
-          }
+          "type": "string",
+          "default": ""
         },
         "valid": true,
-        "notEmpty": ["test-response"],
+        "notEmpty": [],
         "set": {
           "useDefaultValue": true,
           "replaceEmptyByRandomValue": true

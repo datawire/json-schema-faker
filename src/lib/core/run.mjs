@@ -1,5 +1,5 @@
 import optionAPI from '../api/option.mjs';
-import traverse from './traverse.mjs';
+import createTraverse from './traverse.mjs';
 import utils from './utils.mjs';
 import buildResolveSchema from './buildResolveSchema.mjs';
 
@@ -11,6 +11,7 @@ function run(refs, schema, container, synchronous) {
 
   const refDepthMin = optionAPI('refDepthMin') || 0;
   const refDepthMax = optionAPI('refDepthMax') || 3;
+  const traverse = createTraverse();
 
   try {
     const { resolveSchema } = buildResolveSchema({

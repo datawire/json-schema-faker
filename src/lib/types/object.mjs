@@ -44,7 +44,7 @@ function objectType(value, path, resolve, traverseCallback) {
       }
     });
 
-    return traverseCallback(props, path.concat(['properties']), resolve, value);
+    return traverseCallback.properties(props, path.concat(['properties']), resolve, value);
   }
 
   const optionalsProbability = optionAPI('alwaysFakeOptionals') === true ? 1.0 : optionAPI('optionalsProbability');
@@ -287,7 +287,7 @@ function objectType(value, path, resolve, traverseCallback) {
     }, {});
   }
 
-  const result = traverseCallback(sortedObj, path.concat(['properties']), resolve, value);
+  const result = traverseCallback.properties(sortedObj, path.concat(['properties']), resolve, value);
 
   _deps.forEach(dep => {
     for (const sub of dep.values) {
@@ -296,7 +296,7 @@ function objectType(value, path, resolve, traverseCallback) {
       if (utils.hasValue(sub.properties[dep.prop], result.value[dep.prop])) {
         Object.keys(sub.properties).forEach(next => {
           if (next !== dep.prop) {
-            utils.merge(result.value, traverseCallback(sub.properties, path.concat(['properties']), resolve, value).value);
+            utils.merge(result.value, traverseCallback.properties(sub.properties, path.concat(['properties']), resolve, value).value);
           }
         });
         break;

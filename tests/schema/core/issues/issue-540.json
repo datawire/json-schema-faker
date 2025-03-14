@@ -4,17 +4,13 @@
     {
       "description": "should generate enough valid strings",
       "schema": {
-        "comment": {
-          "description": "Comment field",
-          "maxLength": 254,
-          "minLength": 1,
-          "type": "string",
-          "pattern": "^"
-        }
+        "description": "Comment field",
+        "maxLength": 254,
+        "minLength": 1,
+        "type": "string",
+        "pattern": "^"
       },
-      "equal": {
-        "comment": ""
-      }
+      "equal": ""
     }
   ]
 }

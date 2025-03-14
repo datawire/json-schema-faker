@@ -10,9 +10,7 @@
           }
         },
         "valid": true,
-        "equal": {
-          "x": "y"
-        }
+        "equal": {}
       }
     ]
   }

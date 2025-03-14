@@ -6,11 +6,14 @@
         "description": "should handle initialOffset",
         "schema": {
           "items": {
-            "id": {
-              "type": "integer",
-              "autoIncrement": true,
-              "initialOffset": 100001
-            }
+            "properties": {
+              "id": {
+                "type": "integer",
+                "autoIncrement": true,
+                "initialOffset": 100001
+              }
+            },
+            "additionalProperties": false
           },
           "minItems": 3,
           "maxItems": 3

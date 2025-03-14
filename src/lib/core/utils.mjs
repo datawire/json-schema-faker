@@ -517,7 +517,7 @@ function clean(obj, schema, isArray = false) {
 
   Object.keys(obj).forEach(k => {
     if (isEmpty(obj[k])) {
-      if (shouldClean(k, schema)) {
+      if (schema && shouldClean(k, schema)) {
         delete obj[k];
       }
     } else {
