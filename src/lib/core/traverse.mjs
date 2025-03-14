@@ -16,8 +16,16 @@ function getMeta({ $comment: comment, title, description }) {
 }
 
 // TODO provide types
-function createTraverse() {
+function createTraverse(ticks) {
   function traverse(schema, path, resolve, rootSchema) {
+    if (ticks > 0) {
+      ticks -= 1;
+    }
+
+    if (ticks === 0) {
+      throw new RangeError('Schema size exceeded');
+    }
+
     schema = resolve(schema, null, path);
 
     if (schema && (schema.oneOf || schema.anyOf || schema.allOf)) {
@@ -151,7 +159,9 @@ function createTraverse() {
           }
           return { value: innerResult, context };
         } catch (e) {
-          if (typeof e.path === 'undefined') {
+          if (e instanceof RangeError) {
+            throw e;
+          } else if (typeof e.path === 'undefined') {
             throw new ParseError(e.stack, path);
           }
           throw e;

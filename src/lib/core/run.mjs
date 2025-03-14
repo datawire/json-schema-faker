@@ -11,7 +11,8 @@ function run(refs, schema, container, synchronous) {
 
   const refDepthMin = optionAPI('refDepthMin') || 0;
   const refDepthMax = optionAPI('refDepthMax') || 3;
-  const traverse = createTraverse();
+  const ticks = optionAPI('ticks') ?? -1;
+  const traverse = createTraverse(ticks);
 
   try {
     const { resolveSchema } = buildResolveSchema({
