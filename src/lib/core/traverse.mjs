@@ -78,11 +78,6 @@ function traverse(schema, path, resolve, rootSchema) {
     return { value, context: { ...context, items: innerContext } };
   }
 
-  // short-circuit as we don't plan generate more values!
-  if (schema.jsonPath) {
-    return { value: schema, context };
-  }
-
   // TODO remove the ugly overcome
   let type = schema.type;
 

@@ -17,9 +17,9 @@
 
 const jsf = require('./shared');
 
-/* global $RefParser, JSONPath  */
-if (typeof $RefParser !== 'undefined' && typeof JSONPath !== 'undefined') {
-  jsf.setDependencies({ ...JSONPath, $RefParser });
+/* global $RefParser  */
+if (typeof $RefParser !== 'undefined') {
+  jsf.setDependencies({ $RefParser });
 }
 
 if (typeof window !== 'undefined') {

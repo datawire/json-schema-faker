@@ -25,7 +25,6 @@ defaults.maxItems = null;
 defaults.minLength = 0;
 defaults.maxLength = null;
 
-defaults.resolveJsonPath = false;
 defaults.reuseProperties = false;
 defaults.fillProperties = true;
 defaults.sortProperties = false;

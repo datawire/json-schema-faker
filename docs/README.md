@@ -9,7 +9,7 @@
 
 The source code is written in modern ES6-modules through `src` (for testing), but bundled versions are provided to ensure portabilty:
 
-- `vendor.js` required dependencies for browser usage: `json-schema-ref-parser` and `jsonpath-plus`
+- `vendor.js` required dependencies for browser usage: `json-schema-ref-parser`
 - `bundle.js` is generated containing both dependencies from above, ready for the browser!
 - `main.{iife,esm,cjs}.js` are the bundled versions for general usage on NodeJS
 
